@@ -18,7 +18,7 @@
 ###############################################################################
 
 # Support python3 print syntax in python2
-from __future__ import print_function
+
 
 #import datetime
 import sys

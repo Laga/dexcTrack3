@@ -18,7 +18,7 @@
 ###############################################################################
 
 # Support python3 print syntax in python2
-from __future__ import print_function
+
 
 import os
 import sys
@@ -415,7 +415,7 @@ dspan = None
 setRangeButton = None
 sensorWarmupCountDown = None
 latestSensorInsertTime = 0
-minorTickSequence = range(24)
+minorTickSequence = list(range(24))
 last_etime = None
 annRotation = 1.0
 annCloseCount = 0
@@ -1077,7 +1077,7 @@ def updateScale(val):
     elif displayRange >= 60*60*24*2:
         minorTickSequence = (0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22)
     else:
-        minorTickSequence = range(24)
+        minorTickSequence = list(range(24))
 
     # Only retick if the sequence has changed
     if minorTickSequence != priorTickSequence:
@@ -3148,7 +3148,7 @@ def plotGraph():
                                    marker='D', linestyle='None', color='black',
                                    elinewidth=2, ecolor='deeppink', picker=True, zorder=10)
 
-        calibZip = zip(cxnorm, cynorm, cznorm)
+        calibZip = list(zip(cxnorm, cynorm, cznorm))
         for qq in calibZip:
             if qq[0] not in calibDict:
                 if qq[2] >= 0:

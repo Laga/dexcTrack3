@@ -41,7 +41,7 @@
 #########################################################################
 
 # Support python3 print syntax in python2
-from __future__ import print_function
+
 
 import crc16
 import constants
@@ -613,7 +613,7 @@ class Dexcom(object):
     return self.ParsePage(header, packet_data)
 
   def GenericRecordYielder(self, header, data, record_type):
-    for x in xrange(header[1]):
+    for x in range(header[1]):
       yield record_type.Create(data, x)
 
   PARSER_MAP = {
@@ -646,7 +646,7 @@ class Dexcom(object):
     start, end = page_range
     if start != end or not end:
       end += 1
-    for x in reversed(xrange(start, end)):
+    for x in reversed(range(start, end)):
       page_range = self.ReadDatabasePage(record_type, x)
       if page_range == []:
           break

@@ -36,7 +36,7 @@
 #########################################################################
 
 # Support python3 print syntax in python2
-from __future__ import print_function
+
 
 import constants
 import datetime
@@ -46,7 +46,7 @@ import serial.tools.list_ports
 
 if sys.platform == 'win32':
     if sys.version_info < (3, 0):
-        from _winreg import *
+        from winreg import *
     else:
         from winreg import *
 
